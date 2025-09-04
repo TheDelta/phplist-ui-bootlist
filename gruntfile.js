@@ -84,6 +84,7 @@ function setupUGX(grunt) {
             "!bootstrap/**",
             "!.vscode/**",
             "!js/*.js",
+            "js/jquery.min.js",
             "!js/dist/phpList_ui_bootlist.js",
           ],
           dest: "build/",
