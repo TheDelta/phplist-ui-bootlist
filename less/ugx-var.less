@@ -1,0 +1,169 @@
+/**
+ * $FONT-FACE
+ */
+
+@font-face {
+  font-display: swap;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  src: local("Roboto Light"), local("Roboto-Light"), url("../fonts/roboto/Roboto-Light.woff2") format("woff2"), url("../fonts/roboto/Roboto-Light.woff") format("woff"),
+    url("../fonts/roboto/Roboto-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  src: local("Roboto"), local("Roboto-Regular"), url("../fonts/roboto/Roboto-Regular.woff2") format("woff2"), url("../fonts/roboto/Roboto-Regular.woff") format("woff"),
+    url("../fonts/roboto/Roboto-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  src: local("Roboto Bold"), local("Roboto-Bold"), url("../fonts/roboto/Roboto-Bold.woff2") format("woff2"), url("../fonts/roboto/Roboto-Bold.woff") format("woff"),
+    url("../fonts/roboto/Roboto-Bold.ttf") format("truetype");
+}
+
+/* Variables (incl. UGX-Mods) */
+@scheme_base: #205081;
+@color_fancy: #00baff;
+
+@color_main: @scheme_base;
+
+@mob_w_max: 420px;
+
+@linkColor: @color_fancy;
+@linkColorHover: #fff;
+
+@color_main_light: lighten(@color_main, 15%);
+@color_main_lightest: lighten(@color_main, 25%);
+
+@color_main_dark: darken(@color_main, 6.25%); /* Accent to Primary; Darker Blue => #1a4067*/
+@color_main_darkest: darken(@color_main_dark, 1.5%); /* Backgrounds; Darkest Blue => #183c61 */
+@color_main_accent: desaturate(lighten(@scheme_base, 13.33333%), 6.53666%); /* Accent Blue => #3572B0 */
+
+@color_fancy: #00baff; /* fancy color usually for links / highlights */
+@color_fancy_darker: darken(@color_fancy, 34.90196%); // #00384d
+@color_fancy_alternate: orange;
+@color_link: @color_fancy; /* adjust_color(@scheme_base, @hue: -10, @lightness: +15%, @saturation: 80%); */
+
+@color_contrast_bright: #888;
+@color_contrast_lightest: #666;
+@color_contrast_lightest2: #555;
+@color_contrast_light: #333;
+@color_contrast: #2d2d2d; /* Primary; Normal Gray */ /* was: @mid-grey */
+@color_contrast_accent: #262626; /* Accent to Primary */
+@color_contrast_darker: #222222; /* Darker Gray; this is new from Delta! */ /* @border-grey */
+@color_contrast_darker2: #151515; /* This color was in UGXL for the window bottom frame, this is temp until theme is more finalized, either introduce a new better var or merge this with darkest */
+@color_contrast_darkest: #1b1b1c; /* Backgrounds; Darkest Gray */
+@color_contrast_darkest2: #111111; /* This color was in UGXL for the window bottom frame border top, this is temp until theme is more finalized, either introduce a new better var or use darker */
+
+@color_normal: @scheme_base; /* usual Color for normal state */
+@color_active: @color_main_light; /* color for active state */
+@color_dark: @color_main_dark;
+@color_dark_darker: @color_main_darkest; /*currently used for stuff like navigation bar searchbox */
+
+@color_text: #e7e7e7;
+@color_headings: #fff;
+@color_subheadings: #e7e7e7;
+
+@color_border: @color_contrast_lightest;
+
+@color_background: @color_contrast;
+@color_background_content: #121212; /* color value from sceditor */
+@color_background_body: @color_contrast_darkest;
+
+@color_fancy: #00baff; /* fancy color usually for links / highlights */
+@color_fancy_darker: darken(@color_fancy, 34.90196%); // #00384d
+@color_fancy_alternate: orange;
+@color_link: @color_fancy;
+
+@linkcolor_normal: @color_link;
+@linkcolor_hover: #fff;
+@linkcolor_active: #fff;
+
+@color_button_text_normal: rgba(255, 255, 255, 0.7);
+@color_button_text_hover: rgba(255, 255, 255, 1);
+@color_button_text_active: rgba(255, 255, 255, 1);
+
+@color_button_background_normal: @scheme_base;
+@color_button_background_hover: @color_main_dark;
+@color_button_background_active: @color_main_dark;
+
+@color_line_hr: #555;
+
+/* Button */
+
+@color_button_text_normal: rgba(255, 255, 255, 0.7);
+@color_button_text_hover: rgba(255, 255, 255, 1);
+@color_button_text_active: rgba(255, 255, 255, 1);
+
+@color_button_alt_text_normal: rgba(255, 255, 255, 0.7);
+@color_button_alt_text_hover: rgba(255, 255, 255, 1);
+@color_button_alt_text_active: rgba(255, 255, 255, 1);
+
+@color_button_background_normal: @scheme_base;
+@color_button_background_hover: @color_main_dark;
+@color_button_background_active: @color_main_dark;
+
+@color_button_border_checked: #fff;
+
+@color_button_border_normal: @color_normal; /* from sceditor */
+
+@color_button_text_disabled: rgba(160, 160, 160, 0.5); /* From UGXL style */
+@color_button_background_disabled: rgba(53, 114, 176, 0.2); /* rgba(@color_main_accent, 0.2); From UGXL style */
+
+/* Forms */
+
+@color_form_outline: @color_fancy; /* was: lighten(@linkcolor_normal, 15%); */
+
+@color_form_border_normal: @color_normal;
+@color_form_text_normal: #fff;
+@color_form_background_normal: @color_contrast_darkest;
+
+@color_form_border_hover: #fff;
+@color_form_text_hover: #fff;
+@color_form_background_hover: #fff;
+
+@color_form_border_hover: #fff;
+@color_form_text_hover: #fff;
+@color_form_background_hover: #fff;
+
+/* Typography */
+@vert-spacing-unit: 8px;
+@horz-spacing-unit: 8px;
+
+/* --- */
+@panel-default-text: @gray-dark;
+@panel-default-border: @color_main_darkest;
+@panel-default-heading-bg: @color_main_accent;
+
+/* Variables (var.less) */
+
+/* Brand colors */
+@black: #2c2c2c;
+@grey: #8a9798;
+@blue: #5bc0de;
+@red: #993333; // d9534f
+@green: #5cb85c;
+@orange: #f0ad4e;
+
+/* Custom variables */
+@menucolor: @scheme_base;
+@sidebarcolor: @black;
+@greylight: lighten(@grey, 42%);
+@brand-primary: @grey;
+@brand-success: @green;
+@brand-info: @blue;
+@brand-warning: lighten(@orange, 10%);
+@brand-danger: lighten(@red, 10%);
+@state-success-text: darken(@green, 10%);
+@state-warning-text: #cc6600;
+@state-danger-text: #d9534f;
+@state-info-text: @grey;
+@font-family-sans-serif: "Roboto", Arial, sans-serif;

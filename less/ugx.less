@@ -1,0 +1,433 @@
+// Overrides of theme:
+
+body.home .btn.btn-info:not(.back-to-top) {
+  font-family: @font-family-sans-serif;
+}
+
+body {
+  font-family: @font-family-sans-serif;
+}
+
+.sidebar {
+  ul {
+    a {
+      font-family: @font-family-sans-serif;
+    }
+  }
+}
+
+.btn-primary {
+  background-color: @color_button_background_normal;
+  border-color: @color_button_background_normal;
+  color: @color_button_text_normal !important;
+
+  &:hover {
+    background-color: @color_button_background_hover;
+    border-color: @color_button_background_hover;
+    color: @color_button_text_hover !important;
+  }
+}
+
+.open > .dropdown-toggle.btn-primary,
+.open > .dropdown-toggle.btn-primary:hover {
+  background-color: @color_button_background_active;
+  border-color: @color_button_background_active;
+  color: @color_button_text_active !important;
+}
+
+// ------------
+
+#header {
+  background: @color_main;
+  border-bottom: 2px solid @color_dark_darker;
+}
+
+body {
+  &.fixed {
+    h1#logo {
+      background-image: url(../images/ugx-logo.png);
+      background-repeat: no-repeat;
+      background-size: 42px;
+      height: 46px;
+      line-height: 46px;
+      padding-left: 56px;
+      margin: 10px 0;
+    }
+
+    background: @color_contrast_darkest;
+    color: @color_text;
+
+    a,
+    a:visited {
+      color: @linkcolor_normal;
+      text-decoration: none;
+
+      &:focus,
+      &:active {
+        color: @linkcolor_active;
+      }
+
+      &:hover {
+        color: @linkcolor_hover;
+        text-decoration: underline;
+      }
+    }
+
+    /* forms */
+
+    hr {
+      height: 1px;
+      padding: 0;
+      margin: 10px 0;
+
+      color: @color_line_hr;
+      background-color: @color_line_hr;
+      border: none;
+    }
+
+    select,
+    input,
+    textarea {
+      color: white;
+      padding: 5px;
+      border: solid 1px @color_form_border_normal;
+      background: @color_form_background_normal;
+      border-radius: 0;
+
+      &:focus {
+        box-shadow: 0 0 4px 1px alpha(lighten(@linkcolor_normal, 15%), 0.3);
+        outline: 1px solid @color_form_outline;
+      }
+
+      &:disabled {
+        color: #ccc;
+        border-color: #666;
+        opacity: 0.8;
+      }
+    }
+
+    input[type="search"],
+    input[type="textfield"] {
+      border: 1px solid #111;
+
+      box-shadow: #000000 0 0 3px 1px inset;
+      border-radius: 3px;
+
+      padding: 2px 5px 3px;
+    }
+
+    input[type="button"],
+    input[type="submit"],
+    input[type="reset"] {
+      border: none;
+      color: @color_button_text_normal;
+      min-width: 40px;
+
+      /* UGXL Style */
+      padding: 6px 8px;
+      margin: 0 5px;
+      text-decoration: none;
+
+      &:hover {
+        background: @color_button_background_hover;
+      }
+
+      &:active,
+      &.active,
+      &.checked {
+        background: @color_button_background_active;
+      }
+    }
+
+    input:disabled {
+      color: #ccc;
+      border-color: #666;
+      opacity: 0.8;
+    }
+
+    select option {
+      padding: 1px;
+    }
+
+    input {
+      &.input_check,
+      &.input_radio {
+        border: none;
+        background: none;
+      }
+
+      &[type="text"],
+      &[type="password"],
+      &[type="email"] {
+        @include breakpoint(max-width @mob_w_max) {
+          width: 100%;
+        }
+      }
+    }
+
+    fieldset {
+      margin-left: 0;
+      margin-right: 0;
+      padding: (@vert-spacing-unit / 2) @horz-spacing-unit @vert-spacing-unit @horz-spacing-unit;
+      border-color: @color_contrast;
+    }
+
+    legend {
+      @include font-size(18px);
+
+      padding: 0 0.8em;
+      color: @color_contrast;
+    }
+
+    .label-inline {
+      display: inline-block;
+      font-weight: bold;
+    }
+
+    select {
+      padding: 2px 0;
+      background-color: @color_background_content;
+      border: 1px solid @color_normal;
+      color: white;
+    }
+
+    .select {
+      padding: 2px 0;
+      background-color: @color_background_content;
+      border: 1px solid @color_normal;
+      color: white;
+      position: relative;
+      top: -10px;
+      margin-right: 10px;
+    }
+
+    /* Button */
+
+    input[type="submit"],
+    a.button {
+      color: @color_button_text_normal;
+      text-decoration: none;
+      padding: 0 10px;
+      line-height: 30px;
+      height: 30px;
+      border-radius: 0;
+
+      cursor: pointer;
+
+      text-align: center;
+
+      border: 1px solid @color_button_border_normal;
+      background: @color_button_background_normal;
+
+      transition: background-color 0.1s ease-in-out;
+
+      &:visited {
+        color: @color_button_text_normal;
+      }
+
+      .hover,
+      &:hover {
+        text-decoration: none;
+        background: @color_button_background_hover;
+      }
+
+      &.active {
+        background: @color_button_background_active;
+        border-bottom: 1px solid @color_button_border_checked;
+
+        .hover,
+        &:hover {
+          background: @color_active;
+        }
+      }
+
+      &:disabled {
+        cursor: default;
+        color: @color_button_text_disabled;
+        background: @color_button_background_disabled;
+        border: 1px solid @color_contrast_lightest2;
+      }
+
+      // Danger Version
+
+      &.danger {
+        color: @btn-danger-color;
+        border-color: @btn-danger-border;
+        background: @btn-danger-bg;
+
+        &.hover,
+        &:hover {
+          text-decoration: none;
+          background: darken(@btn-danger-bg, 10%);
+        }
+
+        &:focus,
+        &:active,
+        &.active {
+          background: @btn-danger-bg;
+          border-bottom: 1px solid @btn-danger-border;
+
+          .hover,
+          &:hover {
+            background: darken(@btn-danger-bg, 10%);
+          }
+        }
+      }
+
+      // Success Version
+
+      &.success {
+        border-color: @state-success-border;
+        background: @brand-success;
+        color: #000;
+
+        &.hover,
+        &:hover {
+          text-decoration: none;
+          background: darken(@brand-success, 10%);
+        }
+
+        &:focus,
+        &:active,
+        &.active {
+          background: @brand-success;
+          border-bottom: 1px solid @state-success-border;
+
+          .hover,
+          &:hover {
+            background: darken(@brand-success, 10%);
+          }
+        }
+      }
+
+      // Highlight / Info Version
+
+      &.highlight {
+        border-color: @state-info-border;
+        background: @brand-info;
+        color: #000;
+
+        &.hover,
+        &:hover {
+          text-decoration: none;
+          background: darken(@brand-info, 10%);
+        }
+
+        &:focus,
+        &:active,
+        &.active {
+          background: @brand-info;
+          border-bottom: 1px solid @state-info-border;
+
+          .hover,
+          &:hover {
+            background: darken(@brand-info, 10%);
+          }
+        }
+      }
+    }
+
+    .panel {
+      border-color: @color_border;
+    }
+
+    .well {
+      background: @color_contrast_accent;
+      border-color: @color_border;
+    }
+
+    .jumbotron {
+      background: @color_contrast_darker;
+      border: 1px solid @color_border;
+
+      &.table {
+        tbody {
+          border: 0;
+        }
+      }
+    }
+  }
+}
+
+body.fixed {
+  #footer {
+    background-color: @color_contrast_darker2;
+    border-top: 3px solid @color_contrast_accent;
+  }
+
+  .cursor-pointer {
+    cursor: pointer;
+  }
+
+  // .radio {
+  // 	margin-top: 5px;
+  // 	margin-bottom: 5px;
+  // }
+
+  .form-group {
+    input[type="checkbox"] {
+      & + .btn-group {
+        .btn-default {
+          background: @color_contrast_darkest !important;
+          color: @color_text;
+          border-color: @color_border;
+
+          &.active {
+            background: @color_contrast_darker !important;
+          }
+        }
+      }
+
+      &:checked + .btn-group {
+        label span:first-child {
+          color: @green;
+        }
+      }
+    }
+  }
+
+  .content {
+    #listcategory {
+      li {
+        margin: 10px 0;
+      }
+
+      input[type="checkbox"] {
+        margin-right: 7px;
+      }
+    }
+
+    .listdescription {
+      display: block;
+    }
+
+    .ugx-radio-fix {
+      &.is-inline-fix {
+        display: inline-block;
+        margin: 5px -4px 0px 0px;
+
+        input {
+          margin-top: -2px;
+        }
+      }
+    }
+  }
+}
+
+body.fixed,
+#content {
+  .panel-title {
+    a {
+      color: @color_headings;
+      &:hover {
+        color: @color_headings;
+      }
+      &:active {
+        color: @color_headings;
+      }
+      &:visited {
+        color: @color_headings;
+      }
+    }
+  }
+}
